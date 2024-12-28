@@ -5,9 +5,29 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { BRAND } from '@/lib/constants'
 
+function useWindowDimensions() {
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+
+  useEffect(() => {
+    function handleResize() {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  return dimensions
+}
+
 export function Preloader() {
   const [isLoading, setIsLoading] = useState(true)
   const [progress, setProgress] = useState(0)
+  const dimensions = useWindowDimensions()
 
   useEffect(() => {
     // Simulate loading progress
@@ -24,6 +44,8 @@ export function Preloader() {
 
     return () => clearInterval(interval)
   }, [])
+
+  if (!isLoading) return null
 
   return (
     <AnimatePresence>
@@ -133,20 +155,20 @@ export function Preloader() {
 
             {/* Animated Particles */}
             <div className="absolute inset-0 pointer-events-none">
-              {[...Array(20)].map((_, i) => (
+              {dimensions.width > 0 && [...Array(20)].map((_, i) => (
                 <motion.div
                   key={i}
                   initial={{
                     opacity: 0,
                     scale: 0,
-                    x: Math.random() * window.innerWidth,
-                    y: Math.random() * window.innerHeight,
+                    x: Math.random() * dimensions.width,
+                    y: Math.random() * dimensions.height,
                   }}
                   animate={{
                     opacity: [0, 1, 0],
                     scale: [0, 1, 0],
-                    x: Math.random() * window.innerWidth,
-                    y: Math.random() * window.innerHeight,
+                    x: Math.random() * dimensions.width,
+                    y: Math.random() * dimensions.height,
                   }}
                   transition={{
                     duration: Math.random() * 2 + 1,
