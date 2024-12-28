@@ -9,49 +9,49 @@ const SERVICES = [
     icon: null,
     title: "Cambio de Aceite",
     description: "Servicio profesional con aceites de primera calidad",
-    image: "https://images.unsplash.com/photo-1635763200208-c71fd6c88d75?q=80&w=2000"
+    image: "/services/cambio-aceite.jpg"
   },
   {
     icon: null,
     title: "Cambio de Filtros",
     description: "Aire, combustible, aceite y habitáculo",
-    image: "https://images.unsplash.com/photo-1636797549122-9c7996de4bdc?q=80&w=2000"
+    image: "/services/cambio-filtros.jpg"
   },
   {
     icon: null,
     title: "Service Completo",
     description: "Mantenimiento integral de tu vehículo",
-    image: "https://images.unsplash.com/photo-1487754160018-cd6b53ad3c77?q=80&w=2000"
+    image: "/services/service-completo.jpg"
   },
   {
     icon: null,
     title: "Asesoramiento Técnico",
     description: "Expertos a tu servicio",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2000"
+    image: "/services/asesoramiento-tecnico.jpg"
   },
   {
     icon: null,
     title: "Venta de Aceites",
     description: "Envasados, importados y sueltos",
-    image: "https://images.unsplash.com/photo-1604705528621-81b2e4f89e68?q=80&w=2000"
+    image: "/services/venta-aceites.jpg"
   },
   {
     icon: null,
     title: "Venta de Baterías",
     description: "Las mejores marcas del mercado",
-    image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2000"
+    image: "/services/venta-baterias.jpg"
   },
   {
     icon: null,
     title: "Venta de Filtros",
     description: "Amplio stock de todas las marcas",
-    image: "https://images.unsplash.com/photo-1632934454254-75d589f84403?q=80&w=2000"
+    image: "/services/venta-filtros.jpg"
   },
   {
     icon: null,
     title: "Productos Varios",
     description: "Todo para el mantenimiento de tu vehículo",
-    image: "https://images.unsplash.com/photo-1606577924006-27d39b132ae2?q=80&w=2000"
+    image: "/services/productos-varios.jpg"
   }
 ]
 
@@ -94,8 +94,9 @@ export function Services() {
               <Image
                 src={service.image}
                 alt={service.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                layout="fill"
+                objectFit="cover"
+                className="transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
               <div className="absolute inset-0 p-6 flex flex-col justify-end">
