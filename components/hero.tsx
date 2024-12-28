@@ -45,7 +45,8 @@ export function Hero() {
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
       <div className="relative container mx-auto px-4 min-h-screen flex items-center pt-[calc(40px+5rem)]">
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-black/30" /> {/* Capa semi-transparente */}
+        <div className="relative z-10 w-full"> {/* Contenedor para el contenido */}
         <AnimatePresence mode="wait">
           <motion.div
             key={currentContent}
@@ -97,6 +98,7 @@ export function Hero() {
             </motion.div>
           </motion.div>
         </AnimatePresence>
+        </div> {/* Cierre del contenedor del contenido */}
       </div>
     </section>
   )
