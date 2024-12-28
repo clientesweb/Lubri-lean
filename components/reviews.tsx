@@ -36,13 +36,9 @@ export function Reviews() {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % REVIEWS.length)
     }
 
-    timeoutRef.current = setInterval(scrollToNext, 5000)
+    const timer = setInterval(scrollToNext, 5000)
 
-    return () => {
-      if (timeoutRef.current) {
-        clearInterval(timeoutRef.current)
-      }
-    }
+    return () => clearInterval(timer)
   }, [])
 
   return (
