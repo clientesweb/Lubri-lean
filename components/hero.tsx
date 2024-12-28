@@ -45,14 +45,14 @@ export function Hero() {
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
       <div className="relative container mx-auto px-4 min-h-screen flex items-center pt-[calc(40px+5rem)]">
-        <div className="absolute inset-0 bg-black/10" /> {/* Ligera capa de transparencia */}
+        <div className="absolute inset-0 bg-black/10" />
         <AnimatePresence mode="wait">
           <motion.div
             key={currentContent}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="max-w-3xl relative z-10" {/* Añadido z-index para asegurar que el contenido esté sobre la capa transparente */}
+            className="max-w-3xl relative z-10"
           >
             <motion.div
               initial={{ opacity: 0, x: -20 }}
