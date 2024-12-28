@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRAND } from '@/lib/constants'
 
@@ -29,12 +29,11 @@ export function Preloader() {
   const dimensions = useWindowDimensions()
 
   useEffect(() => {
-    // Simulate loading progress
     const interval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
           clearInterval(interval)
-          setTimeout(() => setIsLoading(false), 500) // Give time for final animation
+          setTimeout(() => setIsLoading(false), 500)
           return 100
         }
         return prev + 1
@@ -56,7 +55,6 @@ export function Preloader() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black"
         >
           <div className="relative flex flex-col items-center">
-            {/* Text Animation */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -90,7 +88,6 @@ export function Preloader() {
               </motion.p>
             </motion.div>
 
-            {/* Loading Bar */}
             <div className="w-64 h-1 bg-white/10 rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
@@ -100,7 +97,6 @@ export function Preloader() {
               />
             </div>
 
-            {/* Loading Text */}
             <motion.p
               animate={{
                 opacity: [0.5, 1, 0.5],
@@ -115,7 +111,6 @@ export function Preloader() {
               Cargando {progress}%
             </motion.p>
 
-            {/* Animated Particles */}
             <div className="absolute inset-0 pointer-events-none">
               {dimensions.width > 0 && [...Array(20)].map((_, i) => (
                 <motion.div
