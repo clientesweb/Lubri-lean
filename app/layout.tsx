@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { BRAND } from '@/lib/constants'
+import '@/styles/globals.css'
 
 export const metadata: Metadata = {
   title: 'Lubri-Lean | Lubricantes y Distribuidora',
@@ -57,8 +58,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <body>
+    <html lang="es" className="scroll-smooth">
+      <body className="min-h-screen bg-background font-sans antialiased">
         {children}
       </body>
     </html>
