@@ -31,7 +31,7 @@ export function Header() {
   return (
     <header 
       className={`w-full h-20 transition-all duration-300 ${
-        isScrolled ? 'bg-black/90 backdrop-blur-sm' : 'bg-transparent'
+        isScrolled ? 'bg-black/50 backdrop-blur-sm' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 h-full">
