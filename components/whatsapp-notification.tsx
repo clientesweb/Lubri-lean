@@ -64,8 +64,8 @@ export function WhatsAppNotification() {
               </div>
             </div>
           </div>
-          {/* Animated pulse effect */}
-          <motion.div
+          {/* Animated pulse effect - Commented out as requested */}
+          {/* <motion.div
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.5, 0.8, 0.5],
@@ -76,7 +76,7 @@ export function WhatsAppNotification() {
             }}
             className="absolute -bottom-3 -right-3 w-16 h-16 rounded-full"
             style={{ backgroundColor: BRAND.colors.primary }}
-          />
+          /> */}
         </motion.div>
       )}
     </AnimatePresence>
