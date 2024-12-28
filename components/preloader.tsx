@@ -57,42 +57,6 @@ export function Preloader() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black"
         >
           <div className="relative flex flex-col items-center">
-            {/* Logo Animation */}
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 360],
-              }}
-              transition={{
-                duration: 2,
-                ease: "easeInOut",
-                repeat: Infinity,
-              }}
-              className="relative mb-8"
-            >
-              <Image
-                src="/logo.png"
-                alt="Lubri-Lean"
-                width={150}
-                height={150}
-                className="w-32 h-32 object-contain"
-              />
-              {/* Glowing effect */}
-              <motion.div
-                animate={{
-                  opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 2,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className="absolute inset-0 filter blur-xl"
-                style={{
-                  background: `radial-gradient(circle, ${BRAND.colors.primary}50 0%, transparent 70%)`,
-                }}
-              />
-            </motion.div>
 
             {/* Text Animation */}
             <motion.div
@@ -112,7 +76,7 @@ export function Preloader() {
                 className="text-4xl font-bold mb-2"
               >
                 LUBRI-LEAN
-              </motion.h1>
+              </h1>
               <motion.p
                 animate={{
                   opacity: [0.5, 1, 0.5],
