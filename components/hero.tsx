@@ -44,13 +44,7 @@ export function Hero() {
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
-      {/*<div 
-        className="absolute inset-0" 
-        style={{ 
-          background: `linear-gradient(to right, ${BRAND.colors.dark} 20%, transparent 100%)` 
-        }}
-      />*/}
-      <div className="relative container mx-auto px-4 min-h-screen flex items-center pt-[calc(40px+5rem)] bg-black/50 backdrop-blur-sm rounded-lg">
+      <div className="relative container mx-auto px-4 min-h-screen flex items-center pt-[calc(40px+5rem)]">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentContent}
