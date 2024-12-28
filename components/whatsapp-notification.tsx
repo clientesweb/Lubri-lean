@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
-import Image from 'next/image'
 import { BRAND } from '@/lib/constants'
 
 export function WhatsAppNotification() {
@@ -48,11 +47,9 @@ export function WhatsAppNotification() {
             </button>
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0">
-                <Image
+                <img
                   src="/logo.png"
                   alt="Lubri-Lean"
-                  width={40}
-                  height={40}
                   className="w-10 h-10 object-contain"
                 />
               </div>
@@ -64,19 +61,6 @@ export function WhatsAppNotification() {
               </div>
             </div>
           </div>
-          {/* Animated pulse effect - Commented out as requested */}
-          {/* <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.5, 0.8, 0.5],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-            }}
-            className="absolute -bottom-3 -right-3 w-16 h-16 rounded-full"
-            style={{ backgroundColor: BRAND.colors.primary }}
-          /> */}
         </motion.div>
       )}
     </AnimatePresence>
