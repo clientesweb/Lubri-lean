@@ -1,0 +1,25 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NEXT_USE_NETLIFY_EDGE = "true"
+  NODE_VERSION = "18"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.instagram.com *.google.com *.gstatic.com data: blob:; img-src 'self' data: blob: *.instagram.com *.google.com *.gstatic.com; frame-src 'self' *.instagram.com *.google.com;"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
