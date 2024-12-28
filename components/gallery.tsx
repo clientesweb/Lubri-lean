@@ -57,8 +57,9 @@ export function Gallery() {
               <Image
                 src={image.src}
                 alt={image.alt}
-                fill
-                className="object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -90,8 +91,8 @@ export function Gallery() {
               <Image
                 src={GALLERY_IMAGES[selectedImage].src}
                 alt={GALLERY_IMAGES[selectedImage].alt}
-                fill
-                className="object-contain"
+                layout="fill"
+                objectFit="contain"
               />
             </div>
           </motion.div>
