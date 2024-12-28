@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
 import { BRAND } from '@/lib/constants'
 
 function useWindowDimensions() {
@@ -57,7 +56,6 @@ export function Preloader() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black"
         >
           <div className="relative flex flex-col items-center">
-
             {/* Text Animation */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -76,7 +74,7 @@ export function Preloader() {
                 className="text-4xl font-bold mb-2"
               >
                 LUBRI-LEAN
-              </h1>
+              </motion.h1>
               <motion.p
                 animate={{
                   opacity: [0.5, 1, 0.5],
