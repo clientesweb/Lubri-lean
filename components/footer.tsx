@@ -14,11 +14,9 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <Image
+            <img
               src="/logo.png"
               alt="Lubri-Lean"
-              width={180}
-              height={60}
               className="h-16 w-auto"
             />
             <p className="text-white/70">
@@ -141,11 +139,9 @@ export function Footer() {
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-16 h-16 transition-transform hover:scale-110"
       >
-        <Image
+        <img
           src="/logo.png"
           alt="Lubri-Lean WhatsApp"
-          width={64}
-          height={64}
           className="w-full h-full object-contain"
         />
       </Link>
